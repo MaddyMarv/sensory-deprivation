@@ -7,7 +7,7 @@
     "funding": {
         "kofi": "https://ko-fi.com/indicabunny"
     },
-    "description": "A challenge mod that blinds you by setting gamma to +/-100 and deafens you by muting sound during missions.",
+    "description": "A challenge mod that blinds you by setting gamma to -100 and deafens you by muting sound during missions.",
     "order": {
         "require": [],
         "this_before": [],
