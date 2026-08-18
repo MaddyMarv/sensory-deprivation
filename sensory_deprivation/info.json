@@ -1,0 +1,17 @@
+{
+    "name": "Sensory Deprivation",
+    "author": "IndicaBunny",
+    "version": "1.0",
+    "homepage": "",
+    "source": "",
+    "funding": {
+        "kofi": "https://ko-fi.com/indicabunny"
+    },
+    "description": "A challenge mod that blinds you by setting gamma to +/-100 and deafens you by muting sound during missions.",
+    "order": {
+        "require": [],
+        "this_before": [],
+        "this_after": []
+    },
+    "localization": {}
+}
