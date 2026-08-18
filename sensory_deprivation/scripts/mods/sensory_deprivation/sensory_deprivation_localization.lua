@@ -19,6 +19,9 @@ local localizations = {
     enable_explosion_flash = {
         en = "Explosion Flashes (SEIZURE WARNING)",
     },
+    flash_range_meters = {
+        en = "Flash Trigger Range (Meters)",
+    },
     lidar_group = {
         en = "Scanner Settings",
     },

@@ -47,7 +47,6 @@ mod.apply_gamma_challenge = function()
     if Application.user_setting("gamma") ~= 100 then
         Application.set_user_setting("gamma", 100)
         Application.apply_user_settings()
-        Application.save_user_settings()
     end
 end
 
@@ -83,7 +82,6 @@ mod.apply_deaf = function()
         end
         Application.set_user_setting("sound_settings", "option_master_slider", 0)
         Application.apply_user_settings()
-        Application.save_user_settings()
     end
 end
 
@@ -419,7 +417,8 @@ mod:hook_require("scripts/utilities/attack/explosion", function(instance)
                 local player_unit = player and player.player_unit
                 if player_unit and POSITION_LOOKUP[player_unit] then
                     local dist_sq = Vector3.distance_squared(POSITION_LOOKUP[player_unit], position)
-                    if dist_sq < 900 then
+                    local range = mod:get("flash_range_meters") or 30
+                    if dist_sq < (range * range) then
                         mod.trigger_explosion_flash()
                     end
                 end

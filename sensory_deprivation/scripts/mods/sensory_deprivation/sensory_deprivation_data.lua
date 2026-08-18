@@ -25,6 +25,13 @@ return {
                         setting_id = "enable_explosion_flash",
                         type = "checkbox",
                         default_value = false,
+                    },
+                    {
+                        setting_id = "flash_range_meters",
+                        type = "numeric",
+                        default_value = 15,
+                        range = { 5, 30 },
+                        decimals_number = 0,
                     }
                 }
             },
