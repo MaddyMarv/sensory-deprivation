@@ -7,8 +7,11 @@ local localizations = {
     mod_description = {
         en = "A challenge mod that blinds you by setting gamma to -100 and deafens you by muting sound during missions.",
     },
-    challenge_group = {
+    tab_challenge = {
         en = "Challenge Settings",
+    },
+    challenge_group = {
+        en = "Challenge",
     },
     enable_blind = {
         en = "Enable Blindness Challenge",
@@ -22,8 +25,11 @@ local localizations = {
     flash_range_meters = {
         en = "Flash Trigger Range (Meters)",
     },
-    lidar_group = {
+    tab_lidar = {
         en = "Scanner Settings",
+    },
+    lidar_group = {
+        en = "LIDAR Scanner",
     },
     enable_lidar = {
         en = "Enable LIDAR Scanner",
@@ -44,7 +50,7 @@ local localizations = {
         en = "Auto-Pulse Interval (Seconds)",
     },
     speedrun_group = {
-        en = "Miscellaneous",
+        en = "Personal Best Times",
     },
     enable_speedrun_timer = {
         en = "Enable Personal Speedrun Timer",

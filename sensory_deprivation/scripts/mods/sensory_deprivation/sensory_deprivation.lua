@@ -411,12 +411,21 @@ end)
 
 mod:hook_require("scripts/utilities/attack/explosion", function(instance)
     mod:hook(instance, "create_husk_explosion", function(func, world, physics_world, wwise_world, attacking_owner_unit_or_nil, explosion_template, position, ...)
-        if mod:get("enable_explosion_flash") then
+        if mod:get("enable_explosion_flash") and position then
             if explosion_template and (explosion_template.vfx or explosion_template.scalable_vfx) then
-                local player = Managers.player and Managers.player:local_player(1)
-                local player_unit = player and player.player_unit
-                if player_unit and POSITION_LOOKUP[player_unit] then
-                    local dist_sq = Vector3.distance_squared(POSITION_LOOKUP[player_unit], position)
+                local local_player = Managers.player and Managers.player:local_player(1)
+                local player_unit = local_player and local_player.player_unit
+                local player_pos = nil
+
+                if player_unit and Unit.alive(player_unit) then
+                    player_pos = Unit.world_position(player_unit, 1)
+                else
+                    local pose = get_camera_pose()
+                    player_pos = pose and Matrix4x4.translation(pose)
+                end
+
+                if player_pos then
+                    local dist_sq = Vector3.distance_squared(player_pos, position)
                     local range = mod:get("flash_range_meters") or 30
                     if dist_sq < (range * range) then
                         mod.trigger_explosion_flash()

@@ -9,7 +9,7 @@ return {
             {
                 setting_id = "challenge_group",
                 type = "group",
-                tab = "Challenge Settings",
+                tab = mod:localize("tab_challenge"),
                 sub_widgets = {
                     {
                         setting_id = "enable_blind",
@@ -32,13 +32,13 @@ return {
                         default_value = 15,
                         range = { 5, 30 },
                         decimals_number = 0,
-                    }
-                }
+                    },
+                },
             },
             {
                 setting_id = "lidar_group",
                 type = "group",
-                tab = "Scanner Settings",
+                tab = mod:localize("tab_lidar"),
                 sub_widgets = {
                     {
                         setting_id = "enable_lidar",
@@ -79,21 +79,21 @@ return {
                         default_value = 2,
                         range = { 1, 10 },
                         decimals_number = 1,
-                    }
-                }
+                    },
+                },
             },
             {
                 setting_id = "speedrun_group",
                 type = "group",
-                tab = "Miscellaneous",
+                tab = mod:localize("tab_challenge"),
                 sub_widgets = {
                     {
                         setting_id = "enable_speedrun_timer",
                         type = "checkbox",
                         default_value = false,
-                    }
-                }
-            }
-        }
-    }
+                    },
+                },
+            },
+        },
+    },
 }
