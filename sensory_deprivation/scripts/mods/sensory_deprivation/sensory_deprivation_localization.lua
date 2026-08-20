@@ -5,7 +5,7 @@ local localizations = {
         en = "Sensory Deprivation",
     },
     mod_description = {
-        en = "A challenge mod that blinds you by setting gamma to -100 and deafens you by muting sound during missions.",
+        en = "A challenge mod that impairs your senses (blindness, deafness, and explosion flashes) during missions, with an optional LIDAR scanner to navigate.",
     },
     tab_challenge = {
         en = "Challenge Settings",

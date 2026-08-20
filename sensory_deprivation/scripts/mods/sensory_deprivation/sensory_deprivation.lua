@@ -1,7 +1,5 @@
 local mod = get_mod("sensory_deprivation")
 
-mod.original_gamma = nil
-mod.original_volume = nil
 mod.flash_timer = 0
 mod.has_recorded_run = false
 
@@ -32,38 +30,11 @@ local rebuild_write = 1
 local rebuild_len = 0
 local auto_pulse_timer = 0
 
-mod.apply_gamma_challenge = function()
-    local enable_blind = mod:get("enable_blind")
-
-    if not enable_blind then
-        mod.restore_blind()
-        return
-    end
-
-    if mod.original_gamma == nil then
-        mod.original_gamma = Application.user_setting("gamma") or 0
-    end
-
-    if Application.user_setting("gamma") ~= 100 then
-        Application.set_user_setting("gamma", 100)
-        Application.apply_user_settings()
-    end
-end
-
-mod.restore_blind = function()
-    if mod.original_gamma ~= nil then
-        Application.set_user_setting("gamma", mod.original_gamma)
-        mod.original_gamma = nil
-    else
-        Application.set_user_setting("gamma", 0)
-    end
-    Application.apply_user_settings()
-    Application.save_user_settings()
-end
-
 mod.trigger_explosion_flash = function()
     mod.flash_timer = 1.5
 end
+
+local deaf_active = false
 
 mod.apply_deaf = function()
     local enable_deaf = mod:get("enable_deaf")
@@ -72,30 +43,33 @@ mod.apply_deaf = function()
         return
     end
 
-    if mod.original_volume == nil then
-        mod.original_volume = Application.user_setting("sound_settings", "option_master_slider") or 100
-    end
-    
-    if Application.user_setting("sound_settings", "option_master_slider") ~= 0 then
-        if Wwise then
-            Wwise.set_parameter("option_master_slider", 0)
-        end
-        Application.set_user_setting("sound_settings", "option_master_slider", 0)
-        Application.apply_user_settings()
+    if not deaf_active and Wwise then
+        deaf_active = true
+        Wwise.set_parameter("option_master_slider", 0)
     end
 end
 
 mod.restore_deaf = function()
-    if mod.original_volume ~= nil then
+    if deaf_active then
+        deaf_active = false
         if Wwise then
-            Wwise.set_parameter("option_master_slider", mod.original_volume)
+            local original_volume = Application.user_setting("sound_settings", "option_master_slider") or 100
+            Wwise.set_parameter("option_master_slider", original_volume)
         end
-        Application.set_user_setting("sound_settings", "option_master_slider", mod.original_volume)
-        mod.original_volume = nil
-        Application.apply_user_settings()
-        Application.save_user_settings()
     end
 end
+
+local function on_shading(self, world, shading_env)
+    if mod.is_in_active_gameplay() and mod:get("enable_blind") then
+        if self._world == world and shading_env then
+            ShadingEnvironment.set_scalar(shading_env, "exposure_compensation", 100)
+        end
+    end
+end
+
+mod:hook_require("scripts/managers/camera/camera_manager", function(CameraManager)
+    mod:hook_safe(CameraManager, "shading_callback", on_shading)
+end)
 
 local function get_camera_pose()
     local local_player = Managers.player and Managers.player:local_player(1)
@@ -341,10 +315,8 @@ mod.update = function(dt)
     local in_gameplay = mod.is_in_active_gameplay()
 
     if in_gameplay and not was_in_gameplay then
-        mod.apply_gamma_challenge()
         mod.apply_deaf()
     elseif not in_gameplay and was_in_gameplay then
-        mod.restore_blind()
         mod.restore_deaf()
     end
     was_in_gameplay = in_gameplay
@@ -393,8 +365,6 @@ mod.update = function(dt)
         end
     end
 end
-
-
 
 mod:hook("UIHud", "draw", function(func, self, dt, t, input_service, ...)
     if mod.flash_timer > 0 and mod:get("enable_explosion_flash") then
@@ -464,13 +434,21 @@ mod:hook_require("scripts/managers/game_mode/game_mode_manager", function(instan
     end)
 end)
 
+mod.on_all_mods_loaded = function()
+    local current_gamma = Application.user_setting("gamma")
+    if current_gamma and current_gamma > 1 then
+        Application.set_user_setting("gamma", 0)
+        Application.apply_user_settings()
+        Application.save_user_settings()
+    end
+end
+
 mod.on_game_state_changed = function(status, state_name)
     if state_name == "StateGameplay" then
         if status == "enter" then
             mod.has_recorded_run = false
         elseif status == "exit" then
             was_in_gameplay = false
-            mod.restore_blind()
             mod.restore_deaf()
             reset_state()
             line_object = nil
@@ -488,20 +466,17 @@ mod.on_setting_changed = function(setting_id)
 
     if not mod.is_in_active_gameplay() then return end
     
-    if setting_id == "enable_blind" then
-        mod.apply_gamma_challenge()
-    elseif setting_id == "enable_deaf" then
+    if setting_id == "enable_deaf" then
         mod.apply_deaf()
     end
 end
 
 mod.on_unload = function()
-    mod.restore_blind()
     mod.restore_deaf()
     clear_all()
 end
+
 mod.on_disabled = function()
-    mod.restore_blind()
     mod.restore_deaf()
     clear_all()
 end

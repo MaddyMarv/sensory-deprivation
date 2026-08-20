@@ -1,13 +1,13 @@
 {
     "name": "Sensory Deprivation",
     "author": "IndicaBunny",
-    "version": "1.1",
+    "version": "1.2",
     "homepage": "https://www.nexusmods.com/games/warhammer40kdarktide/mods/1201",
     "source": "https://github.com/MaddyMarv/sensory-deprivation",
     "funding": {
         "kofi": "https://ko-fi.com/indicabunny"
     },
-    "description": "A challenge mod that blinds you by setting gamma to -100 and deafens you by muting sound during missions.",
+    "description": "A challenge mod that impairs your senses (blindness, deafness, and explosion flashes) during missions, with an optional LIDAR scanner to navigate.",
     "order": {
         "require": [],
         "this_before": [],
