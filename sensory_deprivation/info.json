@@ -8,10 +8,11 @@
         "kofi": "https://ko-fi.com/indicabunny"
     },
     "description": "A challenge mod that impairs your senses (blindness, deafness, and explosion flashes) during missions, with an optional LIDAR scanner to navigate.",
-    "order": {
-        "require": [],
-        "this_before": [],
-        "this_after": []
+    "dependencies": {
+        "required": [],
+        "optional": [],
+        "self_before": [],
+        "self_after": []
     },
     "localization": {}
 }
