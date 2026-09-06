@@ -5,7 +5,7 @@ local localizations = {
         en = "Sensory Deprivation",
     },
     mod_description = {
-        en = "Challenge mod that blinds your screen and/or mutes in game audio. Includes a keybound LIDAR scanner to pulse and map terrain.",
+        en = "Challenge mod that blinds your screen and/or mutes in-game audio. Includes a keybound LIDAR scanner to pulse and map terrain.",
     },
     tab_challenge = {
         en = "Challenge Settings",

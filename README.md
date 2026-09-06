@@ -1,7 +1,7 @@
 ### [Sensory Deprivation](https://www.nexusmods.com/warhammer40kdarktide/mods/1201)
 <img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/43f46f61-cb28-413d-9684-9557ce7c1752" />
 
-Challenge mod that blinds your screen and/or mutes in game audio. Includes a keybound LIDAR scanner to pulse and map terrain, optional explosion flashes, and a speedrun timer.
+Challenge mod that blinds your screen and/or mutes in-game audio. Includes a keybound LIDAR scanner to pulse and map terrain, optional explosion flashes, and a speedrun timer.
 
 Please check the required files for options to make it slightly easier!
 

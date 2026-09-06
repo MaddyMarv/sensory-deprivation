@@ -7,7 +7,7 @@
     "funding": {
         "kofi": "https://ko-fi.com/indicabunny"
     },
-    "description": "Challenge mod that blinds your screen and/or mutes in game audio. Includes a keybound LIDAR scanner to pulse and map terrain.",
+    "description": "Challenge mod that blinds your screen and/or mutes in-game audio. Includes a keybound LIDAR scanner to pulse and map terrain.",
     "dependencies": {
         "required": [],
         "self_after": [],
