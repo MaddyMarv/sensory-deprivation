@@ -17,4 +17,5 @@ Challenge mod that blinds you and/or mutes all sound during missions. Toggle the
 - Auto-Pulse Scanner
 - Auto-Pulse Interval (Seconds)
 
-[b]Links:[/b] [url=https://github.com/MaddyMarv/sensory-deprivation]Source Code[/url] | [url=https://www.nexusmods.com/profile/indicabunny]Nexus Mods Profile[/url] | [url=https://ko-fi.com/indicabunny]Support Me on Ko-fi[/url]
+[b]Links:[/b]
+[url=https://github.com/MaddyMarv/sensory-deprivation]Source Code[/url] | [url=https://www.nexusmods.com/profile/indicabunny]Nexus Mods Profile[/url] | [url=https://ko-fi.com/indicabunny]Support Me on Ko-fi[/url]
