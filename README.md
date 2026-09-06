@@ -14,8 +14,8 @@ Challenge mod that blinds you and/or mutes all sound during missions. Toggle the
 
 **Scanner Settings**
 - Enable LIDAR Scanner
-- FOV Scan Keybind (Hotkey)
-- 360 Radial Scan Keybind (Hotkey)
+- FOV Scan (Hotkey)
+- 360 Radial Scan (Hotkey)
 - Scanner Max Range (Meters)
 - Auto-Pulse Scanner
 - Auto-Pulse Interval (Seconds)
