@@ -3,11 +3,17 @@
 
 Challenge mod that blinds you and/or mutes all sound during missions. Toggle the blindness and deaf challenges separately or run both at once. Also includes a LIDAR scanner you can keybind to pulse your FOV or do a full 360° scan to navigate in the dark, with adjustable range and auto-pulse. Optional explosion flashes (seizure warning) and a personal speedrun timer are in there as well.
 
-
 **Options:**
-- Enable Options (Blindness Challenge, Deaf Challenge (Mute Sound), LIDAR Scanner, Personal Speedrun Timer)
+
+**Challenge Settings**
+- Blindness Challenge (Mute Sight)
+- Deaf Challenge (Mute Sound)
 - Explosion Flashes (SEIZURE WARNING)
 - Flash Trigger Range (Meters)
+- Enable Personal Speedrun Timer
+
+**Scanner Settings**
+- Enable LIDAR Scanner
 - FOV Scan Keybind (Hotkey)
 - 360 Radial Scan Keybind (Hotkey)
 - Scanner Max Range (Meters)
