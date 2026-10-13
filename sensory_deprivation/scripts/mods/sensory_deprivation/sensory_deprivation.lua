@@ -312,6 +312,10 @@ end
 local was_in_gameplay = false
 
 mod.update = function(dt)
+    if not mod:is_enabled() then
+        return
+    end
+
     local in_gameplay = mod.is_in_active_gameplay()
 
     if in_gameplay and not was_in_gameplay then
@@ -472,11 +476,13 @@ mod.on_setting_changed = function(setting_id)
 end
 
 mod.on_unload = function()
+    was_in_gameplay = false
     mod.restore_deaf()
     clear_all()
 end
 
 mod.on_disabled = function()
+    was_in_gameplay = false
     mod.restore_deaf()
     clear_all()
 end
