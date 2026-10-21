@@ -7,7 +7,8 @@ Please check the required files for options to make it slightly easier!
 
 Thanks to the Lidar mod for having an assistance option when blind! I took all of the lidar code from there with permission. :)
 
-**Options:**
+<details>
+<summary><b>Mod Settings / Commands</b></summary>
 
 **Challenge Settings**
 - Blindness Challenge (Mute Sight)
@@ -23,5 +24,6 @@ Thanks to the Lidar mod for having an assistance option when blind! I took all o
 - Scanner Max Range (Meters)
 - Auto-Pulse Scanner
 - Auto-Pulse Interval (Seconds)
+</details>
 
 🔗 **Links:** [Source Code](https://github.com/MaddyMarv/sensory-deprivation) | [Nexus Mods Profile](https://www.nexusmods.com/profile/indicabunny) | [Support Me on Ko-fi](https://ko-fi.com/indicabunny)
