@@ -254,7 +254,7 @@ local function scan_rows(num_rows)
 				direction = Vector3.normalize(forward + right * (h_t * h_half_tan) + up * (-v_t * v_half_tan))
 			end
 
-			local ok, hit, hit_position, hit_distance, hit_normal = pcall(
+			local ok, hit, hit_position, _, hit_normal = pcall(
 				PhysicsWorld.raycast,
 				physics_world,
 				origin,
@@ -430,7 +430,7 @@ mod:hook_require("scripts/utilities/attack/explosion", function(instance)
 				if explosion_template and (explosion_template.vfx or explosion_template.scalable_vfx) then
 					local local_player = Managers.player and Managers.player:local_player(1)
 					local player_unit = local_player and local_player.player_unit
-					local player_pos = nil
+					local player_pos
 
 					if player_unit and Unit.alive(player_unit) then
 						player_pos = Unit.world_position(player_unit, 1)

@@ -1,5 +1,3 @@
-local mod = get_mod("sensory_deprivation")
-
 local localizations = {
 	mod_name = {
 		en = "Sensory Deprivation",
