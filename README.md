@@ -11,8 +11,8 @@ Thanks to the Lidar mod for having an assistance option when blind! I took all o
 <summary><b>Mod Settings / Commands</b></summary>
 
 **Challenge Settings**
-- Blindness Challenge (Mute Sight)
-- Deaf Challenge (Mute Sound)
+- Enable Blindness Challenge
+- Enable Deaf Challenge (Mute Sound)
 - Explosion Flashes (SEIZURE WARNING)
 - Flash Trigger Range (Meters)
 - Enable Personal Speedrun Timer
