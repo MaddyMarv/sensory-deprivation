@@ -26,4 +26,4 @@ Thanks to the Lidar mod for having an assistance option when blind! I took all o
 - Auto-Pulse Interval (Seconds)
 </details>
 
-🔗 **Links:** [Source Code](https://github.com/MaddyMarv/sensory-deprivation) | [Nexus Mods Profile](https://www.nexusmods.com/profile/indicabunny) | [Support Me on Ko-fi](https://ko-fi.com/indicabunny)
+🔗 **Links:** [Source Code](https://github.com/MaddyMarv/Sensory-Deprivation) | [Nexus Mods Profile](https://www.nexusmods.com/profile/indicabunny) | [Support Me on Ko-fi](https://ko-fi.com/indicabunny)
